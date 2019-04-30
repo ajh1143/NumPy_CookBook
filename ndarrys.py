@@ -41,6 +41,7 @@ def vectorize_subtract(arr1, arr2):
     result = arr1-arr2
     return result
 
+
 def vectorize_multiply(arr1, arr2):
     """
     :param arr1: NumPy Array 1
@@ -50,6 +51,7 @@ def vectorize_multiply(arr1, arr2):
     result = arr1*arr2
     return result
 
+
 def vectorize_exponential(arr1, value):
     """
     :param arr1: NumPy Array 1
@@ -58,3 +60,14 @@ def vectorize_exponential(arr1, value):
     """
     result = arr1**value
     return result
+
+
+def array_slice(array, start, stop):
+    """
+    :param array: NumPy ndarray
+    :param start: Integer value defining start position to slice array
+    :param stop: Integer value defining the end position to slice array
+    :return sliced: The sliced ndarray
+    """
+    sliced = array[start:stop]
+    return sliced
