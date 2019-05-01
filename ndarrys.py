@@ -69,3 +69,20 @@ def array_slice(array, start, stop):
     """
     sliced = array[start:stop]
     return sliced
+
+def mask_data(array, feature, condition, logic):
+    """ Create a boolean series matching a feature/condition pair, i.e., where location == zip code,
+        apply mask, and return a subset of matching data from ndarray
+    :param array: NumPy array
+    :param feature: Name of metric to be matched via condition
+    :param condition: String name, int/float value, gte or lte if desired
+    :param logic: Logic to apply, i.e., ==, <, >, <=, >= to define mask parameters
+    :return masked: Result of mask filter, returns on values in array that satisfy the condition provided for the
+                    particular feature/metric of interest
+    """
+    if logic != ['<', '>', '==']:
+        print("Unacceptable parameter, try <, >, ==, =, <=, >=, != etc")
+    else:
+        mask = array[feature + logic + condition]
+        masked = array[mask]
+        return masked
